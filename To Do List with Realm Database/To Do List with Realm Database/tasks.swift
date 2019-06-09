@@ -7,3 +7,9 @@
 //
 
 import Foundation
+import RealmSwift
+
+class tasks: Object {
+    @objc dynamic var task_to_do: String?
+    
+}

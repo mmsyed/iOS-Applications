@@ -7,13 +7,38 @@
 //
 
 import UIKit
+import RealmSwift
 
 class FirstViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+      
+        let realm = try! Realm()
+        
+        print(Realm.Configuration.defaultConfiguration.fileURL)
+        
+//        var tasks_list = tasks()
+//        tasks_list.task_to_do = "check "
+//
+//       try! realm.write {
+//            realm.add(tasks_list)
+//        }
+            let task = realm.objects(tasks.self)
+            print(task)
+        
+        try! realm.write {
+            let item = task[2]
+            realm.delete(item)
+            
+        }
+        
+        for t in task {
+            let t1 = t.task_to_do
+            print(t1!)
+        }
     }
+    
 
 
 }
