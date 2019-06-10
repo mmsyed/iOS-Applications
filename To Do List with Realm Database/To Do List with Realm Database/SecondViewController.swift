@@ -35,7 +35,7 @@ class SecondViewController: UIViewController, UITextFieldDelegate {
         if (!(text_view.text == "")) {
             send.add_task(task1: text_view.text!)
         }
-
+ 
         return true
     }
 
