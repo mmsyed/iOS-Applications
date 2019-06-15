@@ -50,7 +50,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
             if (error == nil) {
                 if let placemark = placemarks?[0] {
                     let alt  = ""
-                    if placemark.
+                    if placemark. 
                 }
             }
         }
