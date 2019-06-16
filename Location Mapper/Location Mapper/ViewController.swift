@@ -43,8 +43,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         let location = CLLocationCoordinate2D(latitude: lat, longitude: lon)
         
         let region = MKCoordinateRegion(center: location, span: span)
-        
-        
         self.map.setRegion(region, animated: true)
         
         CLGeocoder().reverseGeocodeLocation(user_loc) { (placemarks, error) in
