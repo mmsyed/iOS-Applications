@@ -40,6 +40,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         
         let span = MKCoordinateSpan(latitudeDelta: lat_delta, longitudeDelta: lon_delta)
         
+        
         let location = CLLocationCoordinate2D(latitude: lat, longitude: lon)
         
         let region = MKCoordinateRegion(center: location, span: span)
