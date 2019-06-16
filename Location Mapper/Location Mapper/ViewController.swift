@@ -45,6 +45,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         
         let region = MKCoordinateRegion(center: location, span: span)
         
+        
         self.map.setRegion(region, animated: true)
         
         CLGeocoder().reverseGeocodeLocation(user_loc) { (placemarks, error) in
