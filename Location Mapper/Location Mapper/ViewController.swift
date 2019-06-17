@@ -40,16 +40,18 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         
         let span = MKCoordinateSpan(latitudeDelta: lat_delta, longitudeDelta: lon_delta)
         
+        
         let location = CLLocationCoordinate2D(latitude: lat, longitude: lon)
         
         let region = MKCoordinateRegion(center: location, span: span)
+        
         self.map.setRegion(region, animated: true)
         
         CLGeocoder().reverseGeocodeLocation(user_loc) { (placemarks, error) in
             if (error == nil) {
                 if let placemark = placemarks?[0] {
                     let alt  = ""
-                    if placemark. 
+                   // if placemark. 
                 }
             }
         }
