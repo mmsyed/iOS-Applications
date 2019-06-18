@@ -37,6 +37,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         loc_manager.startUpdatingLocation()
     }
 
+    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         print(locations)
         let user_loc: CLLocation = locations[0]
