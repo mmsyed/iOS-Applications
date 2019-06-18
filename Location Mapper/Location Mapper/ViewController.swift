@@ -18,14 +18,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
     @IBOutlet var course_label: UILabel!
     @IBOutlet var alt_label: UILabel!
     @IBOutlet var ad1: UILabel!
-    @IBOutlet var ad2: UILabel!
-    @IBOutlet var ad3: UILabel!
-    @IBOutlet var ad4: UILabel!
-    @IBOutlet var adlabel: UILabel!
-    
-    
-    
     @IBOutlet var map: MKMapView!
+    
     var loc_manager = CLLocationManager()
 
     override func viewDidLoad() {
@@ -37,10 +31,12 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         loc_manager.startUpdatingLocation()
     }
 
-    
+    override func viewDidAppear(_ animated: Bool) {
+        
+    }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        print(locations)
+//        print(locations)
         let user_loc: CLLocation = locations[0]
         let lat = user_loc.coordinate.latitude
         let lon = user_loc.coordinate.latitude
@@ -49,18 +45,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         self.speed_label.text = String(user_loc.speed)
         self.course_label.text = String(user_loc.course)
         self.alt_label.text = String(user_loc.altitude)
-        
-//        let lat_delta: CLLocationDegrees = 0.05
-//        let lon_delta: CLLocationDegrees = 0.05
-//
-//        let span = MKCoordinateSpan(latitudeDelta: lat_delta, longitudeDelta: lon_delta)
-//
-//
-//        let location = CLLocationCoordinate2D(latitude: lat, longitude: lon)
-//
-//        let region = MKCoordinateRegion(center: location, span: span)
-//
-//        self.map.setRegion(region, animated: true)
+
         var address = ""
         CLGeocoder().reverseGeocodeLocation(user_loc) { (placemarks, error) in
             if (error == nil) {
@@ -70,24 +55,16 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
                         
                     }
                     if placemark.thoroughfare != nil {
-                        address += placemark.thoroughfare! + "\n"
-                      //  self.ad1.text = address
-
-                    }
+                        address += placemark.thoroughfare! + "\n"   }
                     if placemark.subLocality != nil {
                         address += placemark.subLocality! + " \n"
-                     //   self.ad2.text = placemark.subLocality!
-
                     }
                     if placemark.subAdministrativeArea != nil {
-                      //  self.ad3.text = placemark.subAdministrativeArea!
 
                         address += placemark.subAdministrativeArea! + " \n"
                     }
                     if placemark.postalCode != nil {
                         address += placemark.postalCode! + "\n"
-//                        self.ad4.text = placemark.postalCode!
-
                     }
                     if placemark.country != nil {
                         address += placemark.country! + "\n"
@@ -95,6 +72,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
                     print(address)
                     self.ad1.text = address
                 }
+            }
+            else {
+                print("error")
             }
             }
         }

@@ -44,6 +44,6 @@
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>hello</string>
+	<string>Required to show your location on map!</string>
 </dict>
 </plist>
