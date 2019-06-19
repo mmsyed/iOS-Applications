@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "News Reader/ViewController.swift"
+            timestampString = "582674312.660913"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "countries"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "News_Reader.ViewController.countries.getter : Swift.Array&lt;Swift.String&gt;"
+                  moduleName = "News Reader"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mmsyed/Desktop/Projects/News%20Reader/News%20Reader/ViewController.swift"
+                  timestampString = "582664759.908078"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "44">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "News_Reader.ViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; News_Reader.ViewController"
+                  moduleName = "News Reader"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mmsyed/Desktop/Projects/News%20Reader/News%20Reader/ViewController.swift"
+                  timestampString = "582664759.910745"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "506">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "News_Reader.ViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;News_Reader.ViewController&gt;"
+                  moduleName = "News Reader"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mmsyed/Desktop/Projects/News%20Reader/News%20Reader/ViewController.swift"
+                  timestampString = "582664759.913165"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "478">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
