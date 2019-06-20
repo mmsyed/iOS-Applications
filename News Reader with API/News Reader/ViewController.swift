@@ -17,9 +17,23 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         return 1
     }
     
-    var selected_cntry = String()
-    var selected_ctgry = String()
+    static var selected_cntry: String = "" {
+        didSet{
+        }
+    }
 
+    static var selected_ctgry: String = "" {
+        didSet{
+        }
+    }
+
+    
+    @IBAction func read(_ sender: Any) {
+        let con = SecondViewController()
+        con.searchForUserAlamo()
+        
+    }
+    
     @IBOutlet var country_sel: UIPickerView!
     @IBOutlet var cat_picker: UIPickerView!
     
@@ -47,12 +61,12 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         // Meatlabel.text = activityoptions[row]
         if pickerView.tag == 1 {
-            selected_cntry = countries[row]
+            ViewController.selected_cntry = countries[row]
         }
         else {
-            selected_ctgry = category[row] }
-        print(selected_cntry)
-        print(selected_ctgry)
+            ViewController.selected_ctgry = category[row] }
+        print(ViewController.selected_cntry)
+        print(ViewController.selected_ctgry)
     }
 
     

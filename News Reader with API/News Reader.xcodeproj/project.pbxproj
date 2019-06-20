@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8F3C75F722BBE97E003C1AD8 /* TableViewCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3C75F622BBE97E003C1AD8 /* TableViewCellController.swift */; };
 		8FF3ECE522BA95C50074262B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FF3ECE422BA95C50074262B /* AppDelegate.swift */; };
 		8FF3ECE722BA95C50074262B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FF3ECE622BA95C50074262B /* ViewController.swift */; };
 		8FF3ECEA22BA95C50074262B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8FF3ECE822BA95C50074262B /* Main.storyboard */; };
@@ -19,6 +20,7 @@
 
 /* Begin PBXFileReference section */
 		0D548AB240E04736FF2B3B57 /* Pods_News_Reader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_News_Reader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8F3C75F622BBE97E003C1AD8 /* TableViewCellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellController.swift; sourceTree = "<group>"; };
 		8FF3ECE122BA95C50074262B /* News Reader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "News Reader.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FF3ECE422BA95C50074262B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8FF3ECE622BA95C50074262B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 				8FF3ECEB22BA95C70074262B /* Assets.xcassets */,
 				8FF3ECED22BA95C70074262B /* LaunchScreen.storyboard */,
 				8FF3ECF022BA95C70074262B /* Info.plist */,
+				8F3C75F622BBE97E003C1AD8 /* TableViewCellController.swift */,
 			);
 			path = "News Reader";
 			sourceTree = "<group>";
@@ -220,6 +223,7 @@
 				8FF3ECE722BA95C50074262B /* ViewController.swift in Sources */,
 				8FF3ECF922BADF650074262B /* ThirdViewController.swift in Sources */,
 				8FF3ECE522BA95C50074262B /* AppDelegate.swift in Sources */,
+				8F3C75F722BBE97E003C1AD8 /* TableViewCellController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -15,11 +15,14 @@ class ThirdViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let url = URL(string: SecondViewController.link)
-        webview.loadRequest(URLRequest(url: url!))
         
-
-        // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        let url = URL(string: SecondViewController.link)
+        if (url != nil) {
+            webview.loadRequest(URLRequest(url: url!))
+        }
     }
     
     @IBAction func check(_ sender: Any) {
