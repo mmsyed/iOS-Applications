@@ -29,5 +29,8 @@ class ThirdViewController: UIViewController {
         print(SecondViewController.link)
     }
 
-
+    @IBAction func quit(_ sender: Any) {
+        exit(0)
+    }
+    
 }

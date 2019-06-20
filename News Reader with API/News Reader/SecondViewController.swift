@@ -36,12 +36,11 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBOutlet var cell_title: UILabel!
     
     @IBOutlet var table1: UITableView!
-//    let url_link : String = "https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=d5ad515718da4adfb0ac7a22e7e7dbaa"
-//
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return (json_res["articles"].count)
     }
+    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! TableViewCellController
@@ -55,6 +54,7 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         return cell
     }
+    
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         SecondViewController.link = ((self.json_res["articles"].array![indexPath.row])["url"]).string ?? "hell"
@@ -79,45 +79,36 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
         else {
             SecondViewController.url_link = "https://newsapi.org/v2/top-headlines?country=\(ViewController.selected_cntry)&category=\(ViewController.selected_ctgry)&apiKey=d5ad515718da4adfb0ac7a22e7e7dbaa"
         }
-        table1.reloadData()
-        
+        self.table1.delegate = self
+        self.table1.dataSource = self
+        self.table1.reloadData()
+        get_api_data()
+
     }
     
 
     
     @IBAction func check(_ sender: Any) {
-        searchForUserAlamo()
-        
+//        get_api_data()
     }
     
-    func searchForUserAlamo() {
+    func get_api_data() {
         Alamofire.request(SecondViewController.url_link).responseJSON{
             response in
             if let result_json = response.result.value{
                 self.json_res = JSON(result_json)
-//                self.check1 = ((self.json_res["articles"].array![1])["title"]).string ?? ""
-//                print(self.check1)
-//                print("kfkf")
-//                for i in 1 ... 4 {
-//                    print((self.json_res["articles"].array![i])["title"])
-//                }
-                
             }
         }
         
         table1.reloadData()
     }
-    
-    func get_articles() {
-        //let url_link : String = "https://newsapi.org/v2/top-headlines?country=\(country)&category=\(cat)&apiKey=d5ad515718da4adfb0ac7a22e7e7dbaa"
-        
-    }
+
     
     override func viewDidAppear(_ animated: Bool) {
-       // searchForUserAlamo()
-        table1.reloadData()
+        get_api_data()
+        
     }
-    
+
 
 }
 
