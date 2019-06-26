@@ -83,10 +83,6 @@ class LoginViewController: UIViewController {
         let user = PFUser()
         user.username = username_field.text!
         user.password = password_field.text!
-        //user.email = "email@example.com"
-        // other fields can be set just like with PFObject
-       // user["phone"] = "415-392-0202"
-        
         if (username_field.text != "" || password_field.text != "") {
         user.signUpInBackground {
             (succeeded: Bool, error: Error?) -> Void in
@@ -100,7 +96,6 @@ class LoginViewController: UIViewController {
                 LoginViewController.logged_or_signed = true
                 print("success")
             }
-            
         }
     }
     }
