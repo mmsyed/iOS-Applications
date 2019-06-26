@@ -100,6 +100,7 @@ class LoginViewController: UIViewController {
                 LoginViewController.logged_or_signed = true
                 print("success")
             }
+            
         }
     }
     }
