@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Instagram Clone/LoginViewController.swift"
-            timestampString = "583177066.188259"
+            timestampString = "583182283.240375"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "18"
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Instagram Clone/LoginViewController.swift"
-            timestampString = "583177066.1887521"
+            timestampString = "583182283.2408791"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "28"
-            endingLineNumber = "28"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
             landmarkName = "LoginViewController"
             landmarkType = "3">
          </BreakpointContent>

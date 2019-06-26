@@ -18,9 +18,17 @@ class LoginViewController: UIViewController {
     }
     
     var login_or_signup = true //true when login, false when sigup
+   // var logged_or_signed = false
     
+    static var logged_or_signed = false {
+        didSet{
+        }
+    }
+    
+
     @IBOutlet var top_label: UIImageView!
-    @IBOutlet var username_fiels: UITextField!
+
+    @IBOutlet var username_field: UITextField!
     @IBOutlet var password_field: UITextField!
     
     @IBOutlet var login_button: UIButton!
@@ -40,10 +48,61 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func signup_button_pressed(_ sender: Any) {
-        
+        if (username_field.text != "" || password_field.text != "") {
+
+        if (login_or_signup) {
+            signup_login()
+          
+        }
+        else {
+            PFUser.logInWithUsername(inBackground: username_field.text!, password: password_field.text!) { (user: PFUser?, error: Error?) -> Void in
+                if user != nil {
+                    print("success login")
+                    LoginViewController.logged_or_signed = true
+            }
+                else{
+                    LoginViewController.logged_or_signed = false
+                    print("fail login")
+                }
+            }}
+//        }
+//        if LoginViewController.logged_or_signed {
+//            performSegue(withIdentifier: "loggedin", sender: nil)
+//        }
+            changeview()
+    }
     }
     
-
+    func changeview() {
+        if LoginViewController.logged_or_signed {
+            performSegue(withIdentifier: "loggedin", sender: self)
+        }
+    }
+        
+    func signup_login() {
+        let user = PFUser()
+        user.username = username_field.text!
+        user.password = password_field.text!
+        //user.email = "email@example.com"
+        // other fields can be set just like with PFObject
+       // user["phone"] = "415-392-0202"
+        
+        if (username_field.text != "" || password_field.text != "") {
+        user.signUpInBackground {
+            (succeeded: Bool, error: Error?) -> Void in
+            if let error = error {
+                LoginViewController.logged_or_signed = false
+//                let errorString = error.userInfo["error"] as? String
+                // Show the errorString somewhere and let the user try again.
+                print(error)
+            } else {
+                // Hooray! Let them use the app now.
+                LoginViewController.logged_or_signed = true
+                print("success")
+            }
+        }
+    }
+    }
     /*
     // MARK: - Navigation
 
