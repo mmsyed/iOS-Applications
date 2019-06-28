@@ -25,8 +25,54 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
 //                let img_file = PFFileObject(name: "image", data: img_data)
 //                new_post["image_File"] = img_file
 //            }
+            if let img_data = img.pngData() {
+                let activityIndicator = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
+                
+                activityIndicator.center = self.view.center
+                
+                activityIndicator.hidesWhenStopped = true
+                
+                activityIndicator.style = UIActivityIndicatorView.Style.gray
+                
+                view.addSubview(activityIndicator)
+                
+                activityIndicator.startAnimating()
+                
+                UIApplication.shared.beginIgnoringInteractionEvents()
+
+                let img_file = PFFileObject(name: "image_file", data: img_data)
+                new_post["image_File"] = img_file
+                new_post.saveInBackground { (success, error) in
+                    activityIndicator.stopAnimating()
+                    UIApplication.shared.endIgnoringInteractionEvents()
+                    
+                    if success {
+                        self.create_alert(title: "Image posted!", message: "Image posted successfully")
+                        self.comment_field.text = ""
+                        self.image_view.image = nil
+                    }
+                    else {
+                            self.create_alert(title: "Image post failed", message: "Image size is too large. Try again!")
+                    }
+                }
+                
+            }
     }
     }
+    
+    func create_alert(title:String, message:String) {
+        
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+        
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
+            
+            self.dismiss(animated: true, completion: nil)
+            
+        }))
+        
+        self.present(alert, animated: true, completion: nil)
+    }
+    
     @IBAction func img_button_pressed(_ sender: Any) {
         let img_picker = UIImagePickerController()
         img_picker.delegate = self
@@ -45,6 +91,8 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         }
         self.dismiss(animated: true, completion: nil)
     }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
