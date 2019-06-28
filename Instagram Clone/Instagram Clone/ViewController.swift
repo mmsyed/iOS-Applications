@@ -15,6 +15,19 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
   
     
     @IBOutlet var image_view: UIImageView!
+    @IBOutlet var comment_field: UITextField!
+    
+    @IBAction func post_button(_ sender: Any) {
+        if let img = image_view.image  {
+            let new_post = PFObject(className: "Post")
+            new_post["comment"] = comment_field.text!
+            new_post["userID"] = PFUser.current()?.objectId
+            if let img_data = UIImage.pngData(img){
+                let img_file = PFFileObject(name: "image", data: img_data)
+                new_post["image_File"] = img_file
+            }
+    }
+    }
     @IBAction func img_button_pressed(_ sender: Any) {
         let img_picker = UIImagePickerController()
         img_picker.delegate = self
