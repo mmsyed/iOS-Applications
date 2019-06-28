@@ -22,10 +22,10 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
             let new_post = PFObject(className: "Post")
             new_post["comment"] = comment_field.text!
             new_post["userID"] = PFUser.current()?.objectId
-            if let img_data = UIImage.pngData(img){
-                let img_file = PFFileObject(name: "image", data: img_data)
-                new_post["image_File"] = img_file
-            }
+//            if let img_data = UIImage.pngData(img){
+//                let img_file = PFFileObject(name: "image", data: img_data)
+//                new_post["image_File"] = img_file
+//            }
     }
     }
     @IBAction func img_button_pressed(_ sender: Any) {
