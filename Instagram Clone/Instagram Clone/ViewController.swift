@@ -13,7 +13,6 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     
     @IBOutlet var image_button: UIButton!
   
-    
     @IBOutlet var image_view: UIImageView!
     @IBOutlet var comment_field: UITextField!
     
