@@ -15,7 +15,7 @@ class FeedViewController: UITableViewController {
     var comments = [String]()
     var usernames = [String]()
     var image_files = [PFFileObject]()
-    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
