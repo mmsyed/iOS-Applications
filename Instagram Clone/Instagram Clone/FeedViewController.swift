@@ -19,7 +19,6 @@ class FeedViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // get user data
         let query  = PFUser.query()
         query?.whereKey("username", notEqualTo: PFUser.current()?.username)
