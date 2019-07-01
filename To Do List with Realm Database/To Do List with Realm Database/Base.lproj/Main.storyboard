@@ -79,22 +79,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter a new task to do" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JWe-lc-fn6">
-                                <rect key="frame" x="88" y="247" width="238" height="30"/>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter a new task to do" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JWe-lc-fn6">
+                                <rect key="frame" x="88" y="277" width="238" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.4793452024" blue="0.99908632040000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="New Task" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F6M-Vk-Y4l">
-                                <rect key="frame" x="0.0" y="109" width="414" height="87"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="New Task" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F6M-Vk-Y4l">
+                                <rect key="frame" x="0.0" y="139" width="414" height="87"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.4793452024" blue="0.99908632040000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="39"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9D2-ui-r3X">
-                                <rect key="frame" x="140" y="334" width="135" height="34"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9D2-ui-r3X">
+                                <rect key="frame" x="140" y="364" width="135" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.4793452024" blue="0.99908632040000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                 <state key="normal" title="Add">
@@ -106,18 +109,6 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.4793452024" blue="0.99908632040000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="9D2-ui-r3X" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" constant="140" id="4Lu-pM-gYd"/>
-                            <constraint firstItem="JWe-lc-fn6" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" constant="88" id="5jq-aK-MTg"/>
-                            <constraint firstItem="JWe-lc-fn6" firstAttribute="top" secondItem="F6M-Vk-Y4l" secondAttribute="bottom" constant="60" id="6cw-93-LDa"/>
-                            <constraint firstItem="9D2-ui-r3X" firstAttribute="top" secondItem="JWe-lc-fn6" secondAttribute="bottom" constant="57" id="FQK-85-Kx6"/>
-                            <constraint firstItem="F6M-Vk-Y4l" firstAttribute="trailing" secondItem="O1u-W8-tvY" secondAttribute="trailing" id="FTj-3g-IH0"/>
-                            <constraint firstItem="O1u-W8-tvY" firstAttribute="trailing" secondItem="JWe-lc-fn6" secondAttribute="trailing" constant="88" id="Jpy-YG-Q3E"/>
-                            <constraint firstItem="F6M-Vk-Y4l" firstAttribute="top" secondItem="O1u-W8-tvY" secondAttribute="top" constant="65" id="Lud-ft-Of8"/>
-                            <constraint firstItem="O1u-W8-tvY" firstAttribute="bottom" secondItem="9D2-ui-r3X" secondAttribute="bottom" constant="445" id="P32-Qk-iGM"/>
-                            <constraint firstItem="O1u-W8-tvY" firstAttribute="trailing" secondItem="9D2-ui-r3X" secondAttribute="trailing" constant="139" id="nTH-Cl-NgD"/>
-                            <constraint firstItem="F6M-Vk-Y4l" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" id="njw-vw-Mh5"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Add" image="second" id="cPa-gy-q4n">

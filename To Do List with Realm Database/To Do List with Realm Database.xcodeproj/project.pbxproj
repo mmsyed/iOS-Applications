@@ -367,6 +367,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = L5242Z7Y46;
 				INFOPLIST_FILE = "To Do List with Realm Database/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -385,6 +386,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = L5242Z7Y46;
 				INFOPLIST_FILE = "To Do List with Realm Database/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
