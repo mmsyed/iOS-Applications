@@ -11,4 +11,6 @@ import RealmSwift
 
 class times: Object {
     @objc dynamic var time_check: String?
+    @objc dynamic var device_name: String?
+
 }

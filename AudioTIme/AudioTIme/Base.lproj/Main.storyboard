@@ -40,8 +40,15 @@
                                     <action selector="enter:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BBU-MV-EW3"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FkE-1O-cvw">
+                                <rect key="frame" x="39" y="455" width="296" height="122"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="acC-sm-SK1">
-                                <rect key="frame" x="128" y="416" width="118" height="62"/>
+                                <rect key="frame" x="16" y="585" width="118" height="62"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Get time"/>
                                 <connections>
@@ -55,6 +62,7 @@
                     <connections>
                         <outlet property="label" destination="Whp-OL-xrj" id="bRH-jU-p8s"/>
                         <outlet property="name_field" destination="esm-In-xq8" id="qiD-6i-xP5"/>
+                        <outlet property="times_label" destination="FkE-1O-cvw" id="m7l-CS-noS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
