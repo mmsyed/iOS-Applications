@@ -29,7 +29,14 @@ class ViewController: UIViewController, CBCentralManagerDelegate {
     
     //let realm = try! Realm()
 
-    
+  
+    @IBAction func reset_button(_ sender: Any) {
+        let realm = try! Realm()
+        
+        try! realm.write {
+            realm.deleteAll()
+        }
+    }
     
     @IBAction func get_time(_ sender: Any) {
         
@@ -53,19 +60,16 @@ class ViewController: UIViewController, CBCentralManagerDelegate {
         
         // initialize the date formatter and set the style
         let formatter = DateFormatter()
-        //        formatter.timeStyle = .medium
-        //        formatter.dateStyle = .long
         formatter.timeStyle = .short
         formatter.dateStyle = .short
         
         // get the date time String from the date object
-        print(formatter.string(from: currentDateTime)) // October 8, 2016 at 10:48:53 PM
-        
+  
         let formatted_date = formatter.string(from: currentDateTime)
         let index = formatted_date.index(of: " ") ?? formatted_date.endIndex
         let begin = formatted_date[index...]
         let res = String(begin)
-        print(res)
+        //print(res)
         
         let index2 = res.index(of: "P") ?? res.endIndex
         let begin2 = res[..<index2]
@@ -73,6 +77,7 @@ class ViewController: UIViewController, CBCentralManagerDelegate {
         let test = String(res2.filter { !" \n\t\r".contains($0) })
         let realm = try! Realm()
 
+        if (connected_or_dis) {
         time_sts = ""
         time_sts += " " + test + " / "
 
@@ -82,49 +87,62 @@ class ViewController: UIViewController, CBCentralManagerDelegate {
         //save
         try! realm.write {
             realm.add(time)
-        }
-        //time_sts += " Connected: " + test + " / "
-        //times_label.text = time_sts
-    }
-    
-    func time_label_discon() {
+            } }
         
-        let realm = try! Realm()
-        let currentDateTime = Date()
-        
-        // initialize the date formatter and set the style
-        let formatter = DateFormatter()
+        else {
+            
+            time_disc = ""
+            time_disc += " " + test + " / "
+            let time = times()
+            time.times_discon = time_disc
+            //save
+            try! realm.write {
+                realm.add(time)
+            }
 
-        formatter.timeStyle = .short
-        formatter.dateStyle = .short
-        
-        // get the date time String from the date object
-        print(formatter.string(from: currentDateTime)) // October 8, 2016 at 10:48:53 PM
-        
-        let formatted_date = formatter.string(from: currentDateTime)
-        let index = formatted_date.index(of: " ") ?? formatted_date.endIndex
-        let begin = formatted_date[index...]
-        let res = String(begin)
-        print(res)
-        
-        let index2 = res.index(of: "P") ?? res.endIndex
-        let begin2 = res[..<index2]
-        let res2 = String(begin2)
-        let test = String(res2.filter { !" \n\t\r".contains($0) })
-        
-  
-        time_disc = ""
-        time_disc += " " + test + " / "
-        let time = times()
-        time.times_discon = time_disc
-        //save
-        try! realm.write {
-            realm.add(time)
+            
         }
-
-       // times_disc_label.text = time_disc
-    }
+        
+     }
     
+//    func time_label_discon() {
+//
+//        let realm = try! Realm()
+//        let currentDateTime = Date()
+//
+//        // initialize the date formatter and set the style
+//        let formatter = DateFormatter()
+//
+//        formatter.timeStyle = .short
+//        formatter.dateStyle = .short
+//
+//        // get the date time String from the date object
+//        print(formatter.string(from: currentDateTime))
+//
+//        let formatted_date = formatter.string(from: currentDateTime)
+//        let index = formatted_date.index(of: " ") ?? formatted_date.endIndex
+//        let begin = formatted_date[index...]
+//        let res = String(begin)
+//      //  print(res)
+//
+//        let index2 = res.index(of: "P") ?? res.endIndex
+//        let begin2 = res[..<index2]
+//        let res2 = String(begin2)
+//        let test = String(res2.filter { !" \n\t\r".contains($0) })
+//
+//
+//        time_disc = ""
+//        time_disc += " " + test + " / "
+//        let time = times()
+//        time.times_discon = time_disc
+//        //save
+//        try! realm.write {
+//            realm.add(time)
+//        }
+//
+//       // times_disc_label.text = time_disc
+//    }
+//
     @IBAction func enter(_ sender: Any) {
         
         let realm = try! Realm()
@@ -218,6 +236,8 @@ class ViewController: UIViewController, CBCentralManagerDelegate {
     
     override func viewDidAppear(_ animated: Bool) {
         //get_and_update()
+//        time_stamp()
+//        get_and_update()
     }
 
     func centralManagerDidUpdateState(_ central: CBCentralManager) {
@@ -248,7 +268,7 @@ class ViewController: UIViewController, CBCentralManagerDelegate {
             print("device not found")
             print("*************************************")
             connected_or_dis = false
-            time_label_discon()
+            time_label()
             centralManager?.stopScan()
         }
         }

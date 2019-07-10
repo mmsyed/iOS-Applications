@@ -22,10 +22,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, performFetchWithCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
 //
-        if let vc = window?.rootViewController as? ViewController {
-            vc.time_stamp()
-
-        }
+//        if let vc = window?.rootViewController as? ViewController {
+//            vc.viewDidAppear(true)
+//
+//        }
     }
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
