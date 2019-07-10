@@ -18,9 +18,14 @@ class ViewController: UIViewController, CBCentralManagerDelegate {
     var centralManager : CBCentralManager?
     @IBOutlet var times_label: UILabel!
     
+    @IBOutlet var times_disc_label: UILabel!
     var device_name = String()
     
     var time_sts = String()
+    var time_disc = String()
+    var connected_or_dis = Bool()
+    
+    
     
     //let realm = try! Realm()
 
@@ -29,36 +34,21 @@ class ViewController: UIViewController, CBCentralManagerDelegate {
     @IBAction func get_time(_ sender: Any) {
         
         time_stamp()
-//        // get the current date and time
-//        let currentDateTime = Date()
-//
-//        // initialize the date formatter and set the style
-//        let formatter = DateFormatter()
-////        formatter.timeStyle = .medium
-////        formatter.dateStyle = .long
-//        formatter.timeStyle = .short
-//        formatter.dateStyle = .short
-//
-//        // get the date time String from the date object
-//        print(formatter.string(from: currentDateTime)) // October 8, 2016 at 10:48:53 PM
-//
-//        let formatted_date = formatter.string(from: currentDateTime)
-//        let index = formatted_date.index(of: " ") ?? formatted_date.endIndex
-//        let begin = formatted_date[index...]
-//        let res = String(begin)
-//        print(res)
-//
-//        let index2 = res.index(of: "P") ?? res.endIndex
-//        let begin2 = res[..<index2]
-//        let res2 = String(begin2)
-//        let test = String(res2.filter { !" \n\t\r".contains($0) })
-//
+        get_and_update()
+
     }
     
     func time_stamp() {
         
         updatelabel()
-
+        centralManager = CBCentralManager(delegate: self, queue: nil)
+       // time_label()
+        
+    }
+    
+    func time_label() {
+        
+        
         let currentDateTime = Date()
         
         // initialize the date formatter and set the style
@@ -81,16 +71,62 @@ class ViewController: UIViewController, CBCentralManagerDelegate {
         let begin2 = res[..<index2]
         let res2 = String(begin2)
         let test = String(res2.filter { !" \n\t\r".contains($0) })
+        let realm = try! Realm()
+
+        time_sts = ""
+        time_sts += " " + test + " / "
+
         
+        let time = times()
+        time.times_connceted = time_sts
+        //save
+        try! realm.write {
+            realm.add(time)
+        }
+        //time_sts += " Connected: " + test + " / "
+        //times_label.text = time_sts
+    }
+    
+    func time_label_discon() {
         
-        time_sts += test
-        times_label.text = time_sts
+        let realm = try! Realm()
+        let currentDateTime = Date()
         
+        // initialize the date formatter and set the style
+        let formatter = DateFormatter()
+
+        formatter.timeStyle = .short
+        formatter.dateStyle = .short
         
+        // get the date time String from the date object
+        print(formatter.string(from: currentDateTime)) // October 8, 2016 at 10:48:53 PM
         
+        let formatted_date = formatter.string(from: currentDateTime)
+        let index = formatted_date.index(of: " ") ?? formatted_date.endIndex
+        let begin = formatted_date[index...]
+        let res = String(begin)
+        print(res)
+        
+        let index2 = res.index(of: "P") ?? res.endIndex
+        let begin2 = res[..<index2]
+        let res2 = String(begin2)
+        let test = String(res2.filter { !" \n\t\r".contains($0) })
+        
+  
+        time_disc = ""
+        time_disc += " " + test + " / "
+        let time = times()
+        time.times_discon = time_disc
+        //save
+        try! realm.write {
+            realm.add(time)
+        }
+
+       // times_disc_label.text = time_disc
     }
     
     @IBAction func enter(_ sender: Any) {
+        
         let realm = try! Realm()
         
         if name_field.text != "" {
@@ -105,39 +141,62 @@ class ViewController: UIViewController, CBCentralManagerDelegate {
                 realm.add(name)
             }
         }
-     //  updatelabel()
-        
+        else {
+            clear_all()
+            create_alert(title: "Invalid name", message: "enter correct name")
+        }
     }
     
     func updatelabel() {
+//        device_name = str_name
+//        let arrayOfServices: [name] = [name(string: device_name)]
+//        self.centralManager?.scanForPeripheralsWithServices(arrayOfServices, options: nil)
+//
+//        let serviceUUIDs:[AnyObject] = [CBUUID(string: "180D")]
+//        self.centralManager?.scanForPeripherals(withServices: serviceUUIDs as? [CBUUID], options: nil)
+    
+    }
+
+    func get_and_update() {
+        label.text = ""
+        times_disc_label.text = ""
+        times_label.text = ""
+        time_sts = ""
+        time_disc = ""
         let realm = try! Realm()
-        
         let name = realm.objects(times.self)
         
         //using realm to populate local arrays and count to be used in the tableview
-        var str_name = String()
+        var dev_name = String()
+      //  print(name)
         for n in name {
+           // print(n)
             if (n.device_name != nil) {
-            str_name = n.device_name!
+                dev_name = n.device_name!
+            }
+            
+            if (n.times_connceted != nil) {
+               // print(n.times_connceted)
+                time_sts += n.times_connceted!
+                //print(time_sts)
+            
+            }
+            if (n.times_discon != nil) {
+                time_disc += n.times_discon!
         }
         }
-        print(str_name)
-        device_name = str_name
+       // print(dev_name)
+        device_name = dev_name
+        if (connected_or_dis){
+            label.text = "Connected device: \(device_name)"
+        }
+        else {
+            label.text = "Device not connected"
+        }
         
-      //  label.text = ""
-        centralManager = CBCentralManager(delegate: self, queue: nil)
-        
-//        if name_field.text != "" {
-//            device_name = name_field.text!
-//        }
-       // device_name = "Mo's AirPods"
-    }
-    
-    func fetch() {
-        label.text = "bg fetch"
-        
-
-    }
+        times_disc_label.text = time_disc
+        times_label.text = time_sts
+   }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -153,6 +212,12 @@ class ViewController: UIViewController, CBCentralManagerDelegate {
 //       try! realm.write {
 //            realm.add(time)
 //        }
+        get_and_update()
+
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        //get_and_update()
     }
 
     func centralManagerDidUpdateState(_ central: CBCentralManager) {
@@ -167,23 +232,34 @@ class ViewController: UIViewController, CBCentralManagerDelegate {
     }
     
     func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber) {
+        
         if (peripheral.name != nil && device_name != ""){
             if (peripheral.name! == device_name) {
+                print(peripheral)
                 print("Name: \(peripheral.name!)")
-              label.text = "Airpods found: \(peripheral.name!)"
-               // centralManager?.stopScan()
+               //label.text = "Airpods connected: \(peripheral.name!)"
+                connected_or_dis = true
+                time_label()
+                centralManager?.stopScan()
         }
 
         
-       // else{
-//            print("device not found")
-//            print("*************************************")
-           // centralManager?.stopScan()
-
-       // }
+        else{
+            print("device not found")
+            print("*************************************")
+            connected_or_dis = false
+            time_label_discon()
+            centralManager?.stopScan()
+        }
         }
     }
     
+    func clear_all() {
+        device_name = "Device not found"
+        label.text = ""
+        times_label.text = ""
+        times_disc_label.text = ""
+    }
     func create_alert(title:String, message:String) {
         
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
@@ -195,6 +271,10 @@ class ViewController: UIViewController, CBCentralManagerDelegate {
         }))
         
         self.present(alert, animated: true, completion: nil)
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
 
 }

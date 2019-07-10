@@ -10,7 +10,8 @@ import Foundation
 import RealmSwift
 
 class times: Object {
-    @objc dynamic var time_check: String?
+    @objc dynamic var times_connceted: String?
     @objc dynamic var device_name: String?
+    @objc dynamic var times_discon: String?
 
 }
