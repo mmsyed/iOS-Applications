@@ -48,19 +48,25 @@ class ViewController: UIViewController, CBCentralManagerDelegate {
         let test = String(res2.filter { !" \n\t\r".contains($0) })
 
         print(test)
-    
+
     }
     
     
     
     @IBAction func enter(_ sender: Any) {
+       updatelabel()
+        
+    }
+    
+    func updatelabel() {
         label.text = ""
         centralManager = CBCentralManager(delegate: self, queue: nil)
-
+        
         if name_field.text != "" {
-        device_name = name_field.text!
-        }}
-    
+            device_name = name_field.text!
+        }
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
