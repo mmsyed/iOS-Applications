@@ -197,7 +197,6 @@ class ViewController: UIViewController, CBCentralManagerDelegate {
                // print(n.times_connceted)
                 time_sts += n.times_connceted!
                 //print(time_sts)
-            
             }
             if (n.times_discon != nil) {
                 time_disc += n.times_discon!
