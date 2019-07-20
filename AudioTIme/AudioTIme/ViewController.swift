@@ -214,8 +214,6 @@ class ViewController: UIViewController, CBCentralManagerDelegate {
         times_disc_label.text = time_disc
         times_label.text = time_sts
    }
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
