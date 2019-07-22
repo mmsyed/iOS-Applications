@@ -25,10 +25,7 @@ class ViewController: UIViewController, CBCentralManagerDelegate {
     var time_disc = String()
     var connected_or_dis = Bool()
     
-    
-    
     //let realm = try! Realm()
-
   
     @IBAction func reset_button(_ sender: Any) {
         let realm = try! Realm()
