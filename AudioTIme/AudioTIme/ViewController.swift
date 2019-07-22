@@ -41,7 +41,6 @@ class ViewController: UIViewController, CBCentralManagerDelegate {
         get_and_update()
 
     }
-    
     func time_stamp() {
         
         updatelabel()
