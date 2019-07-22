@@ -51,7 +51,6 @@ class ViewController: UIViewController, CBCentralManagerDelegate {
     
     func time_label() {
         
-        
         let currentDateTime = Date()
         
         // initialize the date formatter and set the style
