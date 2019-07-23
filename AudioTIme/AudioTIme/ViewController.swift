@@ -45,8 +45,6 @@ class ViewController: UIViewController, CBCentralManagerDelegate {
         
         updatelabel()
         centralManager = CBCentralManager(delegate: self, queue: nil)
-       // time_label()
-        
     }
     
     func time_label() {
