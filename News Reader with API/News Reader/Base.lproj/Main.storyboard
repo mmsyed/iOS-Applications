@@ -18,42 +18,40 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <pickerView tag="1" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="1" translatesAutoresizingMaskIntoConstraints="NO" id="91H-kL-39i">
+                            <pickerView tag="1" contentMode="scaleToFill" restorationIdentifier="1" translatesAutoresizingMaskIntoConstraints="NO" id="91H-kL-39i">
                                 <rect key="frame" x="0.0" y="338" width="414" height="150"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="mUT-Qc-yIN"/>
+                                </constraints>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="oDB-0H-Yea"/>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="SHd-NA-lnJ"/>
                                 </connections>
                             </pickerView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="NEWS READER" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Xg-Eo-kcc">
-                                <rect key="frame" x="0.0" y="44" width="414" height="184"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="NEWS READER" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Xg-Eo-kcc">
+                                <rect key="frame" x="0.0" y="44" width="414" height="246"/>
                                 <color key="backgroundColor" red="0.0" green="0.4793452024" blue="0.99908632040000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="45"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Select Country:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PKl-f0-dTg">
-                                <rect key="frame" x="0.0" y="270" width="414" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Select Category:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wsH-7a-hjn">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Category:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wsH-7a-hjn">
                                 <rect key="frame" x="0.0" y="506" width="414" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="YMm-r2-Rhh"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tMi-9Z-28T">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tMi-9Z-28T">
                                 <rect key="frame" x="74" y="743" width="267" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.4793452024" blue="0.99908632040000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="cVl-CF-I9S"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Read News!">
@@ -65,18 +63,50 @@
                                     <segue destination="seC-34-clc" kind="show" id="WGS-BY-Uox"/>
                                 </connections>
                             </button>
-                            <pickerView tag="2" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="2" translatesAutoresizingMaskIntoConstraints="NO" id="R1x-il-Yrv">
+                            <pickerView tag="2" contentMode="scaleToFill" restorationIdentifier="2" translatesAutoresizingMaskIntoConstraints="NO" id="R1x-il-Yrv">
                                 <rect key="frame" x="0.0" y="574" width="414" height="150"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="89u-LC-jLr"/>
+                                </constraints>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="ZsT-Wo-WOt"/>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="wRl-nG-bh5"/>
                                 </connections>
                             </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Select Country:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PKl-f0-dTg">
+                                <rect key="frame" x="0.0" y="285" width="414" height="60"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="NOn-0w-1EP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="wsH-7a-hjn" firstAttribute="top" secondItem="91H-kL-39i" secondAttribute="bottom" constant="18" id="1v7-uh-kdY"/>
+                            <constraint firstItem="3Xg-Eo-kcc" firstAttribute="trailing" secondItem="PKl-f0-dTg" secondAttribute="trailing" id="3E6-Xd-rvH"/>
+                            <constraint firstItem="91H-kL-39i" firstAttribute="trailing" secondItem="wsH-7a-hjn" secondAttribute="trailing" id="3eq-vn-FuP"/>
+                            <constraint firstItem="wsH-7a-hjn" firstAttribute="trailing" secondItem="R1x-il-Yrv" secondAttribute="trailing" id="5Od-KF-QMi"/>
+                            <constraint firstItem="91H-kL-39i" firstAttribute="top" secondItem="PKl-f0-dTg" secondAttribute="bottom" constant="8" symbolic="YES" id="CjL-lj-T5G"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="tMi-9Z-28T" secondAttribute="bottom" constant="59" id="EPo-a6-Dyk"/>
+                            <constraint firstItem="wsH-7a-hjn" firstAttribute="leading" secondItem="R1x-il-Yrv" secondAttribute="leading" id="Exh-fT-uKD"/>
+                            <constraint firstItem="91H-kL-39i" firstAttribute="leading" secondItem="wsH-7a-hjn" secondAttribute="leading" id="FM3-p3-beF"/>
+                            <constraint firstItem="tMi-9Z-28T" firstAttribute="top" secondItem="R1x-il-Yrv" secondAttribute="bottom" constant="19" id="HQq-fZ-qnd"/>
+                            <constraint firstItem="3Xg-Eo-kcc" firstAttribute="leading" secondItem="PKl-f0-dTg" secondAttribute="leading" id="R0F-fF-ajM"/>
+                            <constraint firstItem="tMi-9Z-28T" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="74" id="SBA-1l-ac8"/>
+                            <constraint firstItem="3Xg-Eo-kcc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Ycl-7B-JOA"/>
+                            <constraint firstItem="PKl-f0-dTg" firstAttribute="leading" secondItem="91H-kL-39i" secondAttribute="leading" id="a9Q-mU-YmQ"/>
+                            <constraint firstItem="R1x-il-Yrv" firstAttribute="top" secondItem="wsH-7a-hjn" secondAttribute="bottom" constant="8" symbolic="YES" id="eX0-ro-aFa"/>
+                            <constraint firstItem="PKl-f0-dTg" firstAttribute="trailing" secondItem="91H-kL-39i" secondAttribute="trailing" id="inF-uP-3wH"/>
+                            <constraint firstItem="R1x-il-Yrv" firstAttribute="centerX" secondItem="tMi-9Z-28T" secondAttribute="centerX" id="jEm-Ja-4NR"/>
+                            <constraint firstAttribute="trailing" secondItem="3Xg-Eo-kcc" secondAttribute="trailing" id="kZI-2Z-U7B"/>
+                            <constraint firstItem="PKl-f0-dTg" firstAttribute="top" secondItem="3Xg-Eo-kcc" secondAttribute="bottom" constant="42" id="wDt-Vb-WLi"/>
+                            <constraint firstItem="3Xg-Eo-kcc" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="xA4-T9-SWy"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
@@ -183,7 +213,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HzC-Lq-NBD">
-                                <rect key="frame" x="323" y="44" width="71" height="30"/>
+                                <rect key="frame" x="302" y="44" width="71" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.4793452024" blue="0.99908632040000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Quit">
@@ -208,7 +238,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Ty2-l9-zok"/>
         <segue reference="fnK-Zu-mXD"/>
     </inferredMetricsTieBreakers>
 </document>
