@@ -67,7 +67,6 @@
 			isa = PBXGroup;
 			children = (
 				8FF3ECE322BA95C50074262B /* News Reader */,
-				8FF3ECE222BA95C50074262B /* Products */,
 				732A880E3169B8723B47CDEA /* Pods */,
 				00DAF67976487685E4FB9328 /* Frameworks */,
 			);
@@ -79,6 +78,7 @@
 				8FF3ECE122BA95C50074262B /* News Reader.app */,
 			);
 			name = Products;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		8FF3ECE322BA95C50074262B /* News Reader */ = {
@@ -93,6 +93,7 @@
 				8FF3ECED22BA95C70074262B /* LaunchScreen.storyboard */,
 				8FF3ECF022BA95C70074262B /* Info.plist */,
 				8F3C75F622BBE97E003C1AD8 /* TableViewCellController.swift */,
+				8FF3ECE222BA95C50074262B /* Products */,
 			);
 			path = "News Reader";
 			sourceTree = "<group>";

@@ -9,11 +9,22 @@
 import UIKit
 
 class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    @IBOutlet var item_label: UILabel!
+    @IBOutlet var item_image: UIImageView!
+    @IBOutlet var item_qt: UITextField!
+    
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return 3
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! TableViewCell
+        
+        cell.item_label.text = "red"
+        
+        return cell
         
     }
     
