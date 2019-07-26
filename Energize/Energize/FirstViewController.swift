@@ -17,6 +17,7 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     @IBOutlet var main_table: UITableView!
     var selected_items:[Int] =  []
+    var quantities:[Double] = []
     
     var items = ["Red Bull Single", "Red Bull 4 pack", "Red Bull 8 pack"]
     
@@ -53,15 +54,23 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     selected_items.append((self.main_table.indexPathsForSelectedRows![number][1]))
     }
         }
+        calculate_total()
         
     }
     
     func calculate_total() {
-        
-        
-        
-        
-    }
+        for i in 0...2 {
+        let indexpath = IndexPath(row: i, section: 0)
+        let cell = main_table.cellForRow(at: indexpath) as! TableViewCell
+        print(cell.item_qt.text!)
+        }
+//
+//        var total = 0
+//        for row in selected_items {
+//            if (row == 0) {
+//            }
+//        }
+   }
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
