@@ -16,16 +16,16 @@ class TableViewCell: UITableViewCell {
     
     @IBOutlet var item_img: UIImageView!
     
+    @IBOutlet var item_price: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
 
+
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+        accessoryType = selected ? UITableViewCell.AccessoryType.checkmark : UITableViewCell.AccessoryType.none
     }
-
 }

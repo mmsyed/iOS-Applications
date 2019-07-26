@@ -15,6 +15,7 @@
 		8F80B1AB22E8076300C72A15 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F80B1A922E8076300C72A15 /* LaunchScreen.storyboard */; };
 		8F80B1B322E80A6E00C72A15 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F80B1B222E80A6E00C72A15 /* TableViewController.swift */; };
 		8F80B1B522E80B5400C72A15 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F80B1B422E80B5400C72A15 /* TableViewCell.swift */; };
+		8F80B1B722EA929000C72A15 /* RedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F80B1B622EA929000C72A15 /* RedViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		8F80B1AC22E8076300C72A15 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8F80B1B222E80A6E00C72A15 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		8F80B1B422E80B5400C72A15 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		8F80B1B622EA929000C72A15 /* RedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,12 +64,13 @@
 			children = (
 				8F80B19E22E8076200C72A15 /* AppDelegate.swift */,
 				8F80B1A022E8076200C72A15 /* FirstViewController.swift */,
-				8F80B1B222E80A6E00C72A15 /* TableViewController.swift */,
+				8F80B1B622EA929000C72A15 /* RedViewController.swift */,
 				8F80B1B422E80B5400C72A15 /* TableViewCell.swift */,
 				8F80B1A222E8076200C72A15 /* SecondViewController.swift */,
 				8F80B1A422E8076200C72A15 /* Main.storyboard */,
 				8F80B1A722E8076300C72A15 /* Assets.xcassets */,
 				8F80B1A922E8076300C72A15 /* LaunchScreen.storyboard */,
+				8F80B1B222E80A6E00C72A15 /* TableViewController.swift */,
 				8F80B1AC22E8076300C72A15 /* Info.plist */,
 			);
 			path = Energize;
@@ -148,6 +151,7 @@
 				8F80B1A322E8076200C72A15 /* SecondViewController.swift in Sources */,
 				8F80B19F22E8076200C72A15 /* AppDelegate.swift in Sources */,
 				8F80B1A122E8076200C72A15 /* FirstViewController.swift in Sources */,
+				8F80B1B722EA929000C72A15 /* RedViewController.swift in Sources */,
 				8F80B1B322E80A6E00C72A15 /* TableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
