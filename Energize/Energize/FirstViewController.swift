@@ -36,7 +36,6 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         if (indexPath.row == 2) {
             cell.item_price.text = "$13.50"
         }
-        
         return cell
         
     }
@@ -56,7 +55,6 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
             for number in 0...(size!-1)  {
                 FirstViewController.selected_items.append((self.main_table.indexPathsForSelectedRows![number][1]))
             }
-        }
         
         
         for i in 0...2 {
@@ -64,8 +62,8 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
             let cell = main_table.cellForRow(at: indexpath) as! TableViewCell
             FirstViewController.quantities.append(Double(cell.item_qt.text!) ?? 1)
         }
+        }
    }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -20,21 +20,29 @@ class SecondViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        
+        reciept()
+        print(total_price)
     }
 
     func reciept() {
         var quantities = FirstViewController.quantities
         var selected_rows = FirstViewController.selected_items
-        
+        total_price = 0.0
+
         for row in selected_rows {
             if (row == 0) {
-                total_price = 2.50 * (quantities[0])
+                total_price += 2.50 * (quantities[0])
             }
             if (row == 1) {
-                total_price = 7.24 * quantities[1]
+                total_price += 7.24 * quantities[1]
+            }
+            if (row == 2) {
+                total_price += 13.5 * quantities[2]
             }
                 }
+        print(selected_rows)
+        print(quantities)
+        
     }
 }
 
