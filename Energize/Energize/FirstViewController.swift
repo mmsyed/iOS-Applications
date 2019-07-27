@@ -9,15 +9,12 @@
 import UIKit
 
 class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    @IBOutlet var item_label: UILabel!
-    @IBOutlet var item_image: UIImageView!
-    @IBOutlet var item_qt: UITextField!
-    var lastSelection: NSIndexPath!
+    static var lastSelection: NSIndexPath!
     
     
     @IBOutlet var main_table: UITableView!
-    var selected_items:[Int] =  []
-    var quantities:[Double] = []
+    static var selected_items:[Int] =  []
+    static var quantities:[Double] = []
     
     var items = ["Red Bull Single", "Red Bull 4 pack", "Red Bull 8 pack"]
     
@@ -45,32 +42,30 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     
-    @IBAction func get_total(_ sender: Any) {
-        selected_items.removeAll()
-        let size = (self.main_table.indexPathsForSelectedRows)?.count
-//        print(size!)
-            if (size != nil) {
-        for number in 0...(size!-1)  {
-    selected_items.append((self.main_table.indexPathsForSelectedRows![number][1]))
-    }
-        }
-        calculate_total()
-        
+    @IBAction func get_total(_ sender: Any){
+        calculate()
     }
     
-    func calculate_total() {
-        for i in 0...2 {
-        let indexpath = IndexPath(row: i, section: 0)
-        let cell = main_table.cellForRow(at: indexpath) as! TableViewCell
-        print(cell.item_qt.text!)
+    func calculate() {
+        FirstViewController.selected_items.removeAll()
+        FirstViewController.quantities.removeAll()
+
+        let size = (self.main_table.indexPathsForSelectedRows)?.count
+        //        print(size!)
+        if (size != nil) {
+            for number in 0...(size!-1)  {
+                FirstViewController.selected_items.append((self.main_table.indexPathsForSelectedRows![number][1]))
+            }
         }
-//
-//        var total = 0
-//        for row in selected_items {
-//            if (row == 0) {
-//            }
-//        }
+        
+        
+        for i in 0...2 {
+            let indexpath = IndexPath(row: i, section: 0)
+            let cell = main_table.cellForRow(at: indexpath) as! TableViewCell
+            FirstViewController.quantities.append(Double(cell.item_qt.text!) ?? 1)
+        }
    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
