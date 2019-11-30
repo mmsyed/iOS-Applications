@@ -33,14 +33,9 @@ class ThirdViewController: UIViewController {
     var check = "test123"
     
     @IBAction func next(_ sender: Any) {
-    
     }
     
     func update() {
-       // print("check")
-        
-      //  check = "3231"
-        //print(total)
     }
     
     
@@ -62,6 +57,9 @@ class ThirdViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        sleepHrs = Int(round(sleepSlider.value))
+        commuteHrs = Int(round(commuteSlider.value))
+        foodHrs = Int(round(foodSlider.value))
         performSegue(withIdentifier: "seg1", sender: self)
 
     }
@@ -69,6 +67,7 @@ class ThirdViewController: UIViewController {
 
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "seg1"){
         total = Int(sleepSlider.value) + Int(foodSlider.value) + Int(commuteSlider.value)
         
         let second = segue.destination as! SecondViewController
@@ -80,7 +79,7 @@ class ThirdViewController: UIViewController {
         second.commuteHours = Double(commuteHrs)*7
         second.foodHours = Double(foodHrs)*7
     }
-    
+    }
     
 
 }

@@ -39,6 +39,12 @@ class LogViewController: UIViewController {
     @IBOutlet var goal4label: UILabel!
     @IBOutlet var goal5label: UILabel!
     
+    var goal1: String = ""
+    var goal2: String = ""
+    var goal3: String = ""
+    var goal4: String = ""
+    var goal5: String = ""
+
     var g1hours: Double = 0.0
     var g2hours: Double = 0.0
     var g3hours: Double = 0.0
@@ -56,10 +62,10 @@ class LogViewController: UIViewController {
     
     @IBAction func st1(_ sender: UIStepper) {
         if(oldValue1 < stepper1.value){
-        if(stepper1.value < g1hours) {
+        if(stepper1.value <= g1hours) {
             let goals = realm.objects(hourTracker.self)
             g1hourscompleted += 1
-            goal1label.text = "\(g1hourscompleted)h"+" / " + "\(g1hours)"
+            goal1label.text = "Goal: " + goal1 + " \(g1hourscompleted)h"+" / " + "\(g1hours)"
             
             try! realm.write {
                 for g in goals{
@@ -71,10 +77,10 @@ class LogViewController: UIViewController {
             } }
             
         else{
-            if(stepper1.value < g1hours) {
+            if(stepper1.value <= g1hours) {
                 let goals = realm.objects(hourTracker.self)
                 g1hourscompleted -= 1
-                goal1label.text = "\(g1hourscompleted)h"+" / " + "\(g1hours)"
+                goal1label.text = "Goal: " + goal1 + " \(g1hourscompleted)h"+" / " + "\(g1hours)"
                 
                 try! realm.write {
                     for g in goals{
@@ -90,10 +96,10 @@ class LogViewController: UIViewController {
     
     @IBAction func st2(_ sender: UIStepper) {
         if(oldValue2 < stepper2.value){
-            if(stepper2.value < g2hours) {
+            if(stepper2.value <= g2hours) {
                 let goals = realm.objects(hourTracker.self)
                 g2hourscompleted += 1
-                goal2label.text = "\(g2hourscompleted)h"+" / " + "\(g2hours)"
+                goal2label.text = "Goal: " + goal2 + " \(g2hourscompleted)h"+" / " + "\(g2hours)"
                 
                 try! realm.write {
                     for g in goals{
@@ -105,10 +111,10 @@ class LogViewController: UIViewController {
             } }
             
         else{
-            if(stepper2.value < g2hours) {
+            if(stepper2.value <= g2hours) {
                 let goals = realm.objects(hourTracker.self)
                 g2hourscompleted -= 1
-                goal2label.text = "\(g2hourscompleted)h"+" / " + "\(g2hours)"
+               goal2label.text = "Goal: " + goal2 + " \(g2hourscompleted)h"+" / " + "\(g2hours)"
                 
                 try! realm.write {
                     for g in goals{
@@ -126,10 +132,11 @@ class LogViewController: UIViewController {
     
     @IBAction func st3(_ sender: UIStepper) {
         if(oldValue3 < stepper3.value){
-            if(stepper3.value < g3hours) {
+            if(stepper3.value <= g3hours) {
                 let goals = realm.objects(hourTracker.self)
                 g3hourscompleted += 1
-                goal3label.text = "\(g3hourscompleted)h"+" / " + "\(g3hours)"
+                goal3label.text = "Goal: " + goal3 + " \(g3hourscompleted)h"+" / " + "\(g3hours)"
+
                 
                 try! realm.write {
                     for g in goals{
@@ -141,10 +148,11 @@ class LogViewController: UIViewController {
             } }
             
         else{
-            if(stepper3.value < g3hours) {
+            if(stepper3.value <= g3hours) {
                 let goals = realm.objects(hourTracker.self)
                 g3hourscompleted -= 1
-                goal3label.text = "\(g3hourscompleted)h"+" / " + "\(g3hours)"
+                goal3label.text = "Goal: " + goal3 + " \(g3hourscompleted)h"+" / " + "\(g3hours)"
+
                 
                 try! realm.write {
                     for g in goals{
@@ -159,10 +167,10 @@ class LogViewController: UIViewController {
     
     @IBAction func st4(_ sender: UIStepper) {
         if(oldValue4 < stepper4.value){
-            if(stepper4.value < g4hours) {
+            if(stepper4.value <= g4hours) {
                 let goals = realm.objects(hourTracker.self)
                 g4hourscompleted += 1
-                goal4label.text = "\(g4hourscompleted)h"+" / " + "\(g4hours)"
+                goal4label.text = "Goal: " + goal4 + " \(g4hourscompleted)h"+" / " + "\(g4hours)"
                 
                 try! realm.write {
                     for g in goals{
@@ -174,10 +182,10 @@ class LogViewController: UIViewController {
             } }
             
         else{
-            if(stepper4.value < g4hours) {
+            if(stepper4.value <= g4hours) {
                 let goals = realm.objects(hourTracker.self)
                 g4hourscompleted -= 1
-                goal4label.text = "\(g4hourscompleted)h"+" / " + "\(g4hours)"
+                goal4label.text = "Goal: " + goal4 + " \(g4hourscompleted)h"+" / " + "\(g4hours)"
                 
                 try! realm.write {
                     for g in goals{
@@ -191,10 +199,10 @@ class LogViewController: UIViewController {
         }}
     @IBAction func st5(_ sender: UIStepper) {
         if(oldValue5 < stepper5.value){
-            if(stepper5.value < g5hours) {
+            if(stepper5.value <= g5hours) {
                 let goals = realm.objects(hourTracker.self)
                 g5hourscompleted += 1
-                goal5label.text = "\(g5hourscompleted)h"+" / " + "\(g5hours)"
+                goal5label.text = "Goal: " + goal5 + " \(g5hourscompleted)h"+" / " + "\(g5hours)"
                 
                 try! realm.write {
                     for g in goals{
@@ -206,10 +214,10 @@ class LogViewController: UIViewController {
             } }
             
         else{
-            if(stepper5.value < g5hours) {
+            if(stepper5.value <= g5hours) {
                 let goals = realm.objects(hourTracker.self)
                 g5hourscompleted -= 1
-                goal5label.text = "\(g5hourscompleted)h"+" / " + "\(g5hours)"
+                goal5label.text = "Goal: " + goal5 + " \(g5hourscompleted)h"+" / " + "\(g5hours)"
                 
                 try! realm.write {
                     for g in goals{
@@ -244,6 +252,12 @@ class LogViewController: UIViewController {
             g3hourscompleted = round(g.goal3completed)
             g4hourscompleted = round(g.goal4completed)
             g5hourscompleted = round(g.goal5completed)
+
+            goal1 = g.goal1 ?? "goal1"
+            goal2 = g.goal2 ?? "goal2"
+            goal3 = g.goal3 ?? "goal3"
+            goal4 = g.goal4 ?? "goal4"
+            goal5 = g.goal5 ?? "goal5"
 
             
         }
@@ -284,14 +298,15 @@ class LogViewController: UIViewController {
         progressBar5.setProgress(Float(g5hourscompleted / g5hours) , animated: true)
         progressBar5.transform = CGAffineTransform(scaleX: 1, y: 4)
         
-        goal1label.text = "\(g1hourscompleted)h"+" / " + "\(g1hours)"
-        goal2label.text = "\(g2hourscompleted)h"+" / " + "\(g2hours)"
+        goal1label.text = "Goal: " + goal1 + " \(g1hourscompleted)h"+" / " + "\(g1hours)"
+        
+        goal2label.text = "Goal: " + goal2 + " \(g2hourscompleted)h"+" / " + "\(g2hours)"
 
-        goal3label.text = "\(g3hourscompleted)h"+" / " + "\(g3hours)"
+        goal3label.text = "Goal: " + goal3 + " \(g3hourscompleted)h"+" / " + "\(g3hours)"
 
-        goal4label.text = "\(g4hourscompleted)h"+" / " + "\(g4hours)"
+        goal4label.text = "Goal: " + goal4 + " \(g4hourscompleted)h"+" / " + "\(g4hours)"
 
-        goal5label.text = "\(g5hourscompleted)h"+" / " + "\(g5hours)"
+        goal5label.text = "Goal: " + goal5 + " \(g5hourscompleted)h"+" / " + "\(g5hours)"
 
         
     }
