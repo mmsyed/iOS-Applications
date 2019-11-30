@@ -17,13 +17,19 @@ class SecondViewController: UIViewController, UITextFieldDelegate {
         if (!(text_view.text == "")) {
             sendtask.add_task(task1: text_view.text!)
     }
+        text_view.text = ""
     }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        self.hideKeyboardWhenTappedAround()
         self.text_view.delegate = self
+
     }
+//    override func viewDidLoad() {
+//        super.viewDidLoad()
+//        // Do any additional setup after loading the view, typically from a nib.
+//        self.text_view.delegate = self
+//    }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)

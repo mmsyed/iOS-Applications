@@ -79,25 +79,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter a new task to do" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JWe-lc-fn6">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter a new task to do" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JWe-lc-fn6">
                                 <rect key="frame" x="88" y="277" width="238" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.4793452024" blue="0.99908632040000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="New Task" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F6M-Vk-Y4l">
-                                <rect key="frame" x="0.0" y="139" width="414" height="87"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Task" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F6M-Vk-Y4l">
+                                <rect key="frame" x="0.0" y="139" width="414" height="47"/>
                                 <color key="backgroundColor" red="0.0" green="0.4793452024" blue="0.99908632040000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="39"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9D2-ui-r3X">
-                                <rect key="frame" x="140" y="364" width="135" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9D2-ui-r3X">
+                                <rect key="frame" x="140" y="364" width="135" height="46"/>
                                 <color key="backgroundColor" red="0.0" green="0.4793452024" blue="0.99908632040000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                 <state key="normal" title="Add">
@@ -109,6 +106,17 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.4793452024" blue="0.99908632040000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="O1u-W8-tvY" firstAttribute="trailing" secondItem="9D2-ui-r3X" secondAttribute="trailing" constant="139" id="BPu-dd-Gzj"/>
+                            <constraint firstItem="F6M-Vk-Y4l" firstAttribute="top" secondItem="O1u-W8-tvY" secondAttribute="top" constant="95" id="KNr-HJ-M2N"/>
+                            <constraint firstItem="F6M-Vk-Y4l" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" id="LDd-eB-1fC"/>
+                            <constraint firstItem="O1u-W8-tvY" firstAttribute="trailing" secondItem="JWe-lc-fn6" secondAttribute="trailing" constant="88" id="QFK-zh-bbU"/>
+                            <constraint firstItem="9D2-ui-r3X" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" constant="140" id="VDT-zy-sNO"/>
+                            <constraint firstItem="9D2-ui-r3X" firstAttribute="top" secondItem="JWe-lc-fn6" secondAttribute="bottom" constant="57" id="a5R-GO-sXo"/>
+                            <constraint firstItem="JWe-lc-fn6" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" constant="88" id="d0c-Dg-UDE"/>
+                            <constraint firstItem="F6M-Vk-Y4l" firstAttribute="trailing" secondItem="O1u-W8-tvY" secondAttribute="trailing" id="diX-Oz-ca1"/>
+                            <constraint firstItem="JWe-lc-fn6" firstAttribute="top" secondItem="F6M-Vk-Y4l" secondAttribute="bottom" constant="91" id="mTH-L0-Zze"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Add" image="second" id="cPa-gy-q4n">
